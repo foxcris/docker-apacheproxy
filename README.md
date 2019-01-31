@@ -2,8 +2,18 @@
 
 A simple apache installation with all required modules to run as a proxy in front of other webservers.
 Main Features:
- * automatic creation an renew of letsencrypt certificates
+ * automatic creation and renew of letsencrypt certificates
  * automatic activation of all available site configuration
+ 
+ ##Apache Modules
+ The following apache modules are activated:
+ * proxy_http
+ * proxy_wstunnel
+ * ssl
+ * remoteip
+ * rewrite
+ * headers
+ * http2
  
  ## Configuration
  
