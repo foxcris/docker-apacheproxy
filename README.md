@@ -22,6 +22,7 @@ Main Features:
   | ---------------------- | ----------- |
   | /etc/apache2/sites-available | Directory of all sites configurations to activate an run. If this directory is empty on start default Apache sites are provided. Sites have to use the file extension _.conf_ |
   | /var/log/apache2 | Logging directory |
+  | /etc/letsencrypt | Storage of the created let's encrypt certificates |
  
  ### Letsencrypt
   | Environment Variable | Description |
