@@ -42,13 +42,13 @@ Main Features:
         # match this virtual host. For the default virtual host (this file) this
         # value is not decisive as it is used as a last resort host regardless.
         # However, you must set it for any further virtual host explicitly.
-        ServerName mqtt.volker-boehme.de
+        ServerName example.example.com
 
-        ServerAdmin volker@volker-boehme.de
+        ServerAdmin example@example.com
 
         ProxyPreserveHost On
-        ProxyPass        "/" "http://mosquitto:443/"
-        ProxyPassReverse "/" "http://mosquitto:443/"
+        ProxyPass        "/" "http://example:443/"
+        ProxyPassReverse "/" "http://example:443/"
 
 
         </VirtualHost>
