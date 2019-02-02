@@ -54,3 +54,13 @@ Main Features:
         </VirtualHost>
  </IfModule>
  ```
+
+ ### Docker network configuration
+ To use name resolution between you docker containers create a new docker network to be used for the communication between the apacheproxy container and subsequent containers.
+ ```
+ docker network create \
+  --driver=bridge \
+  --subnet=172.18.0.0/16 \
+  --ip-range=172.18.0.0/24 \
+  apacheproxy
+ ```
