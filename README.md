@@ -51,8 +51,8 @@ Main Features:
         ProxyPass        "/" "http://example:443/"
         ProxyPassReverse "/" "http://example:443/"
 
-
-        </VirtualHost>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
  </IfModule>
  ```
 
