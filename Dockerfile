@@ -36,8 +36,10 @@ RUN a2enmod remoteip
 RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2enmod http2
+RUN a2dissite 000-default.conf 
 
 RUN mv /etc/apache2/sites-available/ /etc/apache2/sites-available_default
+RUN mv /etc/letsencrypt/ /etc/letsencrypt_default
 
 EXPOSE 80 443
 COPY docker-entrypoint.sh /
