@@ -51,9 +51,20 @@ docker network create \
  --ip-range=172.18.0.0/24 \
  apacheproxy
 ```
+
+3. Create an file to store the configuration of the environment variables
+```
+touch /srv/docker-config/apacheproxy/env_file
+``` 
+```
+#Comma seperated list of domainnames
+LETSENCRYPTDOMAINS=subdomain-1.example.com,subdomain-2.example.com,www.example.com
+LETSENCRYPTEMAIL=example@example.com
+```
+
 3. Create the docker container and configure the docker networks for the container. I always create a script for that and store it under
 ```
-/srv/docker-config/apacheproxy/create.sh
+touch /srv/docker-config/apacheproxy/create.sh
 ```
 Content of create.sh:
 ```
@@ -76,7 +87,7 @@ docker network disconnect bridge apacheproxy
 
 4. Create replace.sh to install/update the container. Store it in
 ```
-/srv/docker-config/apacheproxy/replace.sh
+touch /srv/docker-config/apacheproxy/replace.sh
 ```
 ```
 #/bin/bash
