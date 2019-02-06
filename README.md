@@ -67,7 +67,6 @@ docker create\
  --volume "/srv/docker/apacheproxy/var/log/apache2:/var/log/apache2"\
  --volume "/srv/docker/apacheproxy/etc/letsencrypt:/etc/letsencrypt"\
  --env-file=/srv/docker-config/apacheproxy/env_file\
- -l com.centurylinklabs.watchtower.enable=true\
  -p 80:80\
  -p 443:443\
  foxcris/docker-apacheproxy
