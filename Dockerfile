@@ -38,6 +38,8 @@ RUN mv /etc/apache2/sites-available/ /etc/apache2/sites-available_default
 RUN mv /etc/letsencrypt/ /etc/letsencrypt_default
 
 VOLUME /etc/apache2/sites-available
+VOLUME /var/log/apache2
+VOLUME /var/log/letsencrypt
 VOLUME /etc/letsencrypt
 
 EXPOSE 80 443
