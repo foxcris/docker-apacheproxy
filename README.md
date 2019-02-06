@@ -35,6 +35,14 @@ The following environment variables are available to configure the container on 
  | LETSENCRYPTDOMAINS | Comma seperated list of all domainnames to request/renew a let's encrypt certificate |
  | LETSENCRYPTEMAIL | E-Mail to be used for notifications from let's encrypt |
 
+## Container Tags
+
+ | Tag name | Description |
+ | ---------------------- | ----------- |
+ | latest | Latest stable version of the container |
+ | stable | Latest stable version of the container |
+ | dev | latest development version of the container. Do not use in production environments! |
+
 ## Usage
 
 To run the container and store the data and configuration on the local host run the following commands:
