@@ -51,7 +51,7 @@ To run the container and store the data and configuration on the local host run 
 mkdir /srv/docker/apacheproxy
 mkdir /srv/docker-config/apacheproxy
 ```
-2. Create an specific docjer network to connect apacheproxy to the required subsequent containers. By using a specific docker network name resolution can be used to connect to the other containers.
+2. Create an specific docker network to connect apacheproxy to the required subsequent containers. By using a specific docker network name resolution can be used to connect to the other containers.
 ```
 docker network create \
  --driver=bridge \
