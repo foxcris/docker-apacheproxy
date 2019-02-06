@@ -25,10 +25,6 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 #certbot
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache -t stretch-backports && apt-get clean
 
-#RUN echo "#/bin/bash" > /etc/cron.daily/certbot
-#RUN echo 'certbot renew --renew-hook "apachectl -k graceful"' >> /etc/cron.daily/certbot
-#RUN chmod a+x /etc/cron.daily/certbot
-
 RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
 RUN a2enmod ssl
@@ -40,6 +36,9 @@ RUN a2dissite 000-default.conf
 
 RUN mv /etc/apache2/sites-available/ /etc/apache2/sites-available_default
 RUN mv /etc/letsencrypt/ /etc/letsencrypt_default
+
+VOLUME /etc/apache2/sites-available
+VOLUME /etc/letsencrypt
 
 EXPOSE 80 443
 COPY docker-entrypoint.sh /
