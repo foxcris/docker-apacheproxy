@@ -19,6 +19,7 @@ The following apache modules are activated:
  
 ### Configuration files, log files, buisness data
 The following directories can be loaded from the host to keep the data and configuration files out of the container:
+
  | PATH in container | Description |
  | ---------------------- | ----------- |
  | /etc/apache2/sites-available | Directory of all sites configurations to activate an run. If this directory is empty on start default Apache sites are provided. Sites have to use the file extension _.conf_ |
@@ -28,6 +29,7 @@ The following directories can be loaded from the host to keep the data and confi
  
 ### Environment variables
 The following environment variables are available to configure the container on startup.
+
  | Environment Variable | Description |
  | ---------------------- | ----------- |
  | LETSENCRYPTDOMAINS | Comma seperated list of all domainnames to request/renew a let's encrypt certificate |
