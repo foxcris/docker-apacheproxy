@@ -32,7 +32,7 @@ The following environment variables are available to configure the container on 
 
  | Environment Variable | Description |
  | ---------------------- | ----------- |
- | LETSENCRYPTDOMAINS | Comma seperated list of all domainnames to request/renew a let's encrypt certificate |
+ | LETSENCRYPTDOMAINS | Comma seperated (,) list of domainnames, for earch domain a seperated certificate is generated. If you want to create a SAN certificate with multiple domainnames, seperate theses domains with an hash (#). |
  | LETSENCRYPTEMAIL | E-Mail to be used for notifications from let's encrypt |
 
 ## Container Tags

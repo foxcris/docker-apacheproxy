@@ -1,3 +1,4 @@
-#Comma seperated list of domainnames
-LETSENCRYPTDOMAINS=
-LETSENCRYPTEMAIL=
+#Comma seperated (,) list of domainnames, for earch domain a seperated certificate is generated
+#if you want to create a SAN certificate with multiple domainnames, seperate theses domains with an hash (#)
+LETSENCRYPTDOMAINS=example.example.com,testSAN.test.de#test2SAN.test.de,example2.example.com
+LETSENCRYPTEMAIL=example@example.com

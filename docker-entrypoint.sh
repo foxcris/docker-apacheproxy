@@ -20,7 +20,12 @@ then
   domains=$(echo $LETSENCRYPTDOMAINS | tr "," "\n")
   for domain in $domains
   do
-    certbot --apache -n -d $domain --agree-tos --email $LETSENCRYPTEMAIL
+    if [[ $domain == *"#"* ]]; then
+      echo "SAN Certificate"
+      #replace seperators
+      domain=`echo $domain | sed 's/#/,/g'`
+    fi
+    certbot --apache --noninteractive --expand --domains $domain --agree-tos --email $LETSENCRYPTEMAIL
   done
   /usr/sbin/apache2ctl stop
 fi
