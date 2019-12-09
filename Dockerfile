@@ -1,13 +1,13 @@
-FROM debian:stretch
+FROM debian:buster
 
 MAINTAINER foxcris
 
 #repositories richtig einrichten
-RUN echo 'deb http://deb.debian.org/debian stretch main' > /etc/apt/sources.list
-RUN echo 'deb http://deb.debian.org/debian stretch-updates main' >> /etc/apt/sources.list
-RUN echo 'deb http://security.debian.org stretch/updates main' >> /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian buster main' > /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian buster-updates main' >> /etc/apt/sources.list
+RUN echo 'deb http://security.debian.org buster/updates main' >> /etc/apt/sources.list
 #backports fuer certbot
-RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' >> /etc/apt/sources.list
+RUN echo 'deb http://ftp.debian.org/debian buster-backports main' >> /etc/apt/sources.list
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales && apt-get clean
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 && apt-get clean
 
 #certbot
-RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache -t stretch-backports && apt-get clean
+RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache -t buster-backports && apt-get clean
 
 RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
